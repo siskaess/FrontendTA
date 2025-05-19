@@ -48,7 +48,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "https://backendta-production-034f.up.railway.app/api/auth/register",
         {
           name,
           email,

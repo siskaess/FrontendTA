@@ -30,7 +30,7 @@ import { CartProvider } from "./context/CartContext"; // Assuming CartProvider w
 import MyTransactionsDashboard from "./components/dashboards/MyTransactionsDashboard";
 
 // Set base URL for all API requests
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://backendta-production-034f.up.railway.app/";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
