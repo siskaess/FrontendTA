@@ -506,7 +506,7 @@ const CartPage = ({ userData, onLogout }) => {
                       <Form.Check
                         type="checkbox"
                         id="installment-checkbox"
-                        label="Jasa Pemasangan"
+                        label="Installation Service"
                         checked={!installmentHidden}
                         onChange={(e) => {
                           setInstallmentHidden(!e.target.checked);
