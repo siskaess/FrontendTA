@@ -28,7 +28,6 @@ const ScheduleDetail = ({ userData, onLogout }) => {
     const fetchSchedule = async () => {
       try {
         setLoading(true);
-        const token = localStorage.getItem("token");
         const response = await axios.get(`/api/schedules/id/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -261,6 +260,24 @@ const ScheduleDetail = ({ userData, onLogout }) => {
                         </td>
                       </tr>
                     )}
+                    <tr>
+                      <td className="fw-bold">Image</td>
+                      <td>
+                        {schedule.imageUrl ? (
+                          <img
+                            src={schedule.imageUrl}
+                            alt="Schedule"
+                            style={{
+                              maxWidth: "200px",
+                              maxHeight: "200px",
+                              objectFit: "contain",
+                            }}
+                          />
+                        ) : (
+                          <span>No image available</span>
+                        )}
+                      </td>
+                    </tr>
                   </tbody>
                 </Table>
               </Col>
