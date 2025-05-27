@@ -28,6 +28,7 @@ const ScheduleDetail = ({ userData, onLogout }) => {
     const fetchSchedule = async () => {
       try {
         setLoading(true);
+        const token = localStorage.getItem("token"); // <-- Add this line
         const response = await axios.get(`/api/schedules/id/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -263,9 +264,9 @@ const ScheduleDetail = ({ userData, onLogout }) => {
                     <tr>
                       <td className="fw-bold">Image</td>
                       <td>
-                        {schedule.imageUrl ? (
+                        {schedule.report ? (
                           <img
-                            src={schedule.imageUrl}
+                            src={schedule.report}
                             alt="Schedule"
                             style={{
                               maxWidth: "200px",
